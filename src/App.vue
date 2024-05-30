@@ -67,30 +67,29 @@
           transition-next="slide-left"
         >
           <q-carousel-slide
-  name="1"
-  img-src="https://sweezy-cursors.com/wp-content/uploads/cursor/bts-lightstick/bts-lightstick-custom-cursor.png"
->
-  <div class="absolute-bottom bg-black bg-opacity-50 text-h5 text-white q-pa-sm">
-    Lightstick Terbaik!
-  </div>
-</q-carousel-slide>
-<q-carousel-slide
-  name="2"
-  img-src="https://cdn.custom-cursor.com/packs/2870/k-pop-blackpink-lightstick-pack.png"
->
-  <div class="absolute-bottom bg-black bg-opacity-50 text-h5 text-white q-pa-sm">
-    Diskon Spesial!
-  </div>
-</q-carousel-slide>
-<q-carousel-slide
-  name="3"
-  img-src="https://i.pinimg.com/736x/c0/bb/83/c0bb83bba761685645cbee0fcfac703b.jpg"
->
-  <div class="absolute-bottom bg-black bg-opacity-50 text-h5 text-white q-pa-sm">
-    Lightstick Terbaru!
-  </div>
-</q-carousel-slide>
-
+            name="1"
+            img-src="https://sweezy-cursors.com/wp-content/uploads/cursor/bts-lightstick/bts-lightstick-custom-cursor.png"
+          >
+            <div class="absolute-bottom bg-black bg-opacity-50 text-h5 text-white q-pa-sm">
+              Lightstick Terbaik!
+            </div>
+          </q-carousel-slide>
+          <q-carousel-slide
+            name="2"
+            img-src="https://cdn.custom-cursor.com/packs/2870/k-pop-blackpink-lightstick-pack.png"
+          >
+            <div class="absolute-bottom bg-black bg-opacity-50 text-h5 text-white q-pa-sm">
+              Diskon Spesial!
+            </div>
+          </q-carousel-slide>
+          <q-carousel-slide
+            name="3"
+            img-src="https://i.pinimg.com/736x/c0/bb/83/c0bb83bba761685645cbee0fcfac703b.jpg"
+          >
+            <div class="absolute-bottom bg-black bg-opacity-50 text-h5 text-white q-pa-sm">
+              Lightstick Terbaru!
+            </div>
+          </q-carousel-slide>
         </q-carousel>
 
         <!-- Card Section -->
@@ -110,6 +109,7 @@
             <q-card-actions align="right">
               <q-btn flat label="Detail" color="purple" />
               <q-btn flat label="Add to Cart" color="purple" />
+              <q-btn flat label="Delete" color="red" @click="deleteLightstick(index)" />
             </q-card-actions>
           </q-card>
         </div>
@@ -119,7 +119,7 @@
     <!-- Footer -->
     <q-footer class="bg-purple text-white q-pa-md">
       <div class="row items-center">
-        <div class="col text-white">© 2024 Toko Lightstick K-Pop</div>
+        <div style="text-align: center;" class="col text-white">© 2024 Toko Lightstick K-Pop</div>
         <div class="col-auto">
           <q-btn flat round icon="fab fa-facebook" class="text-white q-mr-sm" />
           <q-btn flat round icon="fab fa-twitter" class="text-white q-mr-sm" />
@@ -191,7 +191,7 @@ export default {
         name: "Twice Lightstick",
         description: "Lightstick resmi Twice",
         image: "https://images-cdn.ubuy.qa/6352a2c9a6f1fe2eed34f574-twice-official-light-stick-candy-bong.jpg",
-        price: "Rp p795.000",
+        price: "Rp 795.000",
         rating: 3,
       },
       {
@@ -211,12 +211,17 @@ export default {
       leftDrawerOpen.value = true;
     }
 
+    function deleteLightstick(index) {
+      lightsticks.value.splice(index, 1);
+    }
+
     return {
       leftDrawerOpen,
       slide,
       lightsticks,
       toggleLeftDrawer,
       openDrawer,
+      deleteLightstick,
     };
   },
 };
