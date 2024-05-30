@@ -109,7 +109,7 @@
             <q-card-actions align="right">
               <q-btn flat label="Detail" color="purple" />
               <q-btn flat label="Add to Cart" color="purple" />
-              <q-btn flat label="Delete" color="red" @click="deleteLightstick(index)" />
+              <q-btn flat label="Delete" color="purple" @click="deleteLightstick(index)" />
             </q-card-actions>
           </q-card>
         </div>
